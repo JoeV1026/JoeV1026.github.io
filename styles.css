@@ -1,0 +1,354 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', monospace;
+}
+
+body {
+  min-height: 100vh;
+  background-color: black;
+  
+}
+.header {
+  position: fixed;
+  width: 100%;
+  display:flex;
+  background-color: black;
+  padding: 2vh;
+  border-style: solid;
+  border-color: white;
+  justify-content: space-between; 
+}
+
+.logo{
+  color: white;
+  font-family: 'Courier New', monospace;
+  font-weight: 400;
+  font-size: 2vh;
+  border-bottom: solid;
+  border-color: white;
+  border-width: 1px;
+
+}
+.navbar li a{
+  font-family: 'Courier New', monospace;
+  font-size: 2vh;
+  list-style-type: none;
+  color:white;
+  text-decoration: none;
+  margin-left: 40px;
+}
+
+.HomeContent{
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  min-height: 100vh;
+  
+}
+.HomeContent .HomeName{
+  position: relative;
+  display: flex;
+  color: white;
+  font-family: 'Courier New', monospace;
+  font-size: 22vh;
+  justify-content: center;
+  animation: glitch 5s infinite;
+}
+.HomeName::before, .HomeName::after{
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  color: white;
+  background: black;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: glitch 5.5s infinite;
+}
+.HomeName::before{
+  left: 43vh;
+  text-shadow: -2px 0 red;
+  animation-duration: 5s; 
+}
+.HomeName::after {
+  left: 40vh;
+  text-shadow: -2px 0 blue;
+  animation-duration: 5.2s;
+}
+@keyframes glitch {
+  0% {
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.4deg);
+  }
+  20%{
+    clip: rect(15px, 9999px, 56px, 0);
+    transform: skew(0.3deg);
+  }
+  40%{
+    clip: rect(85px, 9999px, 140px, 0);
+    transform: skew(0.5deg);
+  }
+  60%{
+    clip: rect(35px, 9999px, 90px, 0);
+    transform: skew(0.6deg);
+  }
+  80%{
+    clip: rect(42px, 9999px, 44px, 0);
+    transform: skew(0.4deg);
+  }
+  100%{
+    clip: rect(15px, 9999px, 56px, 0);
+    transform: skew(0.3deg);
+  }
+}
+
+.HomeContent .HomeAbout {
+  font-family: 'Courier New', monospace;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 2.1;
+}
+.AboutContent{
+  width: 100%;
+  min-height: 75vh;
+  border-bottom: solid;
+  border-color: white;
+}
+
+.AboutContent .AboutText {
+  background: black;
+  position: relative;
+  min-height: 59vh;
+  float: left;
+  color: white;
+  width: 100vh;
+  margin-top: 2vh;
+  margin-left:5vh;
+}
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.AboutText::after, .AboutText::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), blue, purple, green, orange, yellow, pink, brown);
+  top: 50%;
+  left:50%;
+  z-index:-1;
+  translate: -50% -50%;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+@keyframes spin {
+  from{
+    --angle: 0deg;
+  }
+  To{
+    --angle: 360deg;
+  }
+}
+.AboutText::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+.AboutContent .AboutText .AboutTextHeader {
+  margin-left: 3vh;
+  margin-top: 2vh;
+  color: white;
+  font-size: 3vh;
+  margin-right: 20vh;
+  margin-bottom: 3vh;
+  border-bottom: solid;
+  border-color: white;
+  width: 23vh;
+}
+.AboutContent .AboutText .AboutTextText {
+  border-top: solid;
+  border-bottom: solid;
+  border-color: white;
+  color: white;
+  font-size: 20vh;
+  padding-top: 3vh;
+  min-height: 48vh;
+  font-size: 2vh;
+}
+.Education{
+  margin-left: 110vh; 
+  min-height: 59vh;
+  width: 40%;
+}
+.Community{
+  justify-self: center;
+  border-bottom: solid;
+  border-color: blue;
+  color:white;
+}
+.GATECH{
+  float: left;
+  background-image: url('images.jpg');
+  height: 30vh;
+  width: 30vh;
+  background-position: center;
+  margin-top: 5vh;
+  margin-left: 4vh;
+  animation: bounce 2s infinite;
+}
+.FSC {
+  float: right;
+  background-image: url('FSCpng.png');
+  background-position: center;
+  background-size: 100% 100%;
+  height: 30vh;
+  width: 30vh;
+  background-position: center;
+  margin-top: 5vh;
+  margin-right: 5vh;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%{
+    transform: translateY(0);
+  }
+  40%{
+    transform:translateY(-30px);
+  }
+  60%{
+    transform:translateY(0);
+  }
+  80%{
+    transform:translateY(-15px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+.GeorgiaTechInfo{
+  float: left;
+  color: white;
+  width: 50%;
+  margin-top: 1vh;
+  border-right: solid;
+  border-color: blue;
+}
+.GeorgiaTechInfo .GeorgiaClasses{
+  font-size: 1.5vh;
+  list-style-type: none;
+}
+.FarmingdaleInfo .FSCClasses{
+  font-size: 1.5vh;
+  list-style-type: none;
+}
+.FarmingdaleInfo{
+  margin-left: .2vh;
+  width: 35vh;
+  margin-top: 1vh;
+  float: right;
+  color: white;
+}
+.ProjectsContent{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+}
+.ProjectContainer{
+  position: relative;
+  height: 85vh;
+  width: auto;
+  margin: 15vh;
+  top: 0;
+
+}
+.ProjectsLight{
+  text-shadow: 0 0 10px #03bcf4;
+  position: absolute;
+  margin-left: 5vh;
+  width: 50vh;
+  font-size: 10vh;
+  rotate: -30deg;
+  color:white;
+  font-family: 'Style Script';
+  z-index: 1;
+  animation: flicker 5s linear infinite;
+}
+
+.ContactContent{
+  border-top: solid;
+  border-color: white;
+  display: flex;
+  background-color: black;
+  height: 50vh;
+  width: 100%;
+}
+.AroundContactText{
+  height:50vh;
+  width: 80vh;
+  border-right:solid;
+  border-color: white;
+}
+.Text1{
+  font-family: 'Trebuchet MS', sans-serif;
+  min-height: 10vh;  
+  font-size: 12vh;
+  margin-left: 5vh;
+  -webkit-text-stroke: 3px white;
+}
+.Text2{
+  font-family: 'Trebuchet MS', sans-serif;
+  min-height: 10vh;  
+  font-size: 12vh;
+  color: white;
+  margin-left: 12vh;
+  
+}
+.Text3{
+  font-family: 'Trebuchet MS', sans-serif;
+  min-height: 10vh;  
+  font-size: 12vh;
+  margin-left: 21vh;
+  -webkit-text-stroke: 3px white;
+}
+.ContactLinks {
+  width: 50vh;
+  float: right;
+  border-right: solid;
+  border-color: white;
+}
+.ContactLinks p{
+  margin-top: 4vh;
+  margin-left: 1vh;
+  color:white;
+}
+.ContactLinks a{
+  display:block;
+  width: 50vh;
+  margin-top: 4vh;
+  margin-left: 1vh;
+  list-style-type: none;
+  color: white;
+  text-decoration: none;
+
+}
+.Archie p{
+  margin-top:4vh;
+  margin-left:1vh;
+  color: white;  
+}
+.ArchiePhoto{
+  background-image: url('IMG_0123.JPG');
+  background-position: center;
+  background-size: 100% 100%;
+  height: 40vh;
+  width: 30vh;
+  justify-self: center;
+  margin-left: 15vh;
+  margin-top: 2vh;
+}
