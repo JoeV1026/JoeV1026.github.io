@@ -12,10 +12,10 @@ body {
 }
 .header {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   display:flex;
   background-color: black;
-  padding: 2vh;
+  padding: 15px;
   border-style: solid;
   border-color: white;
   justify-content: space-between; 
@@ -25,7 +25,7 @@ body {
   color: white;
   font-family: 'Courier New', monospace;
   font-weight: 400;
-  font-size: 2vh;
+  font-size: .9vw;
   border-bottom: solid;
   border-color: white;
   border-width: 1px;
@@ -33,7 +33,7 @@ body {
 }
 .navbar li a{
   font-family: 'Courier New', monospace;
-  font-size: 2vh;
+  font-size: 1vw;
   list-style-type: none;
   color:white;
   text-decoration: none;
@@ -52,7 +52,7 @@ body {
   display: flex;
   color: white;
   font-family: 'Courier New', monospace;
-  font-size: 22vh;
+  font-size: 12vw;
   justify-content: center;
   animation: glitch 5s infinite;
 }
@@ -67,12 +67,12 @@ body {
   animation: glitch 5.5s infinite;
 }
 .HomeName::before{
-  left: 43vh;
+  left: 17.5vw;
   text-shadow: -2px 0 red;
   animation-duration: 5s; 
 }
 .HomeName::after {
-  left: 40vh;
+  left: 16vw;
   text-shadow: -2px 0 blue;
   animation-duration: 5.2s;
 }
@@ -120,12 +120,12 @@ body {
 .AboutContent .AboutText {
   background: black;
   position: relative;
-  min-height: 59vh;
+  min-height: 28.9vw;
   float: left;
   color: white;
-  width: 100vh;
+  width: 50vw;
   margin-top: 2vh;
-  margin-left:5vh;
+  margin-left:3vw;
 }
 @property --angle{
   syntax: "<angle>";
@@ -160,25 +160,24 @@ body {
   opacity: 0.5;
 }
 .AboutContent .AboutText .AboutTextHeader {
-  margin-left: 3vh;
+  margin-left: 2vw;
   margin-top: 2vh;
   color: white;
-  font-size: 3vh;
+  font-size: 1.7vw;
   margin-right: 20vh;
   margin-bottom: 3vh;
   border-bottom: solid;
   border-color: white;
-  width: 23vh;
+  width: 11.5vw;
 }
 .AboutContent .AboutText .AboutTextText {
   border-top: solid;
   border-bottom: solid;
   border-color: white;
   color: white;
-  font-size: 20vh;
+  font-size: 1.3vw;
   padding-top: 3vh;
   min-height: 48vh;
-  font-size: 2vh;
 }
 .Education{
   margin-left: 110vh; 
@@ -285,70 +284,71 @@ body {
   border-color: white;
   display: flex;
   background-color: black;
-  height: 50vh;
+  height: 25vw;
   width: 100%;
 }
 .AroundContactText{
-  height:50vh;
-  width: 80vh;
+  height:25vw;
+  width: 39vw;
   border-right:solid;
   border-color: white;
 }
 .Text1{
   font-family: 'Trebuchet MS', sans-serif;
-  min-height: 10vh;  
-  font-size: 12vh;
-  margin-left: 5vh;
+  min-height: 5vw;  
+  font-size: 5vw;
+  margin-left: 4vw;
   -webkit-text-stroke: 3px white;
 }
 .Text2{
   font-family: 'Trebuchet MS', sans-serif;
-  min-height: 10vh;  
-  font-size: 12vh;
+  min-height: 5vw;  
+  font-size: 5vw;
   color: white;
-  margin-left: 12vh;
+  margin-left: 8vw;
   
 }
 .Text3{
   font-family: 'Trebuchet MS', sans-serif;
-  min-height: 10vh;  
-  font-size: 12vh;
-  margin-left: 21vh;
+  min-height: 5vw;  
+  font-size: 5vw;
+  margin-left: 14vw;
   -webkit-text-stroke: 3px white;
 }
 .ContactLinks {
-  width: 50vh;
+  width: 25vw;
   float: right;
   border-right: solid;
   border-color: white;
+  font-size: 1vw;
 }
 .ContactLinks p{
-  margin-top: 4vh;
-  margin-left: 1vh;
+  margin-top: 1.5vw;
+  margin-left: 1vw;
   color:white;
 }
 .ContactLinks a{
   display:block;
-  width: 50vh;
-  margin-top: 4vh;
-  margin-left: 1vh;
+  width: 50vw;
+  margin-top: 2.5vw;
+  margin-left: 1vw;
   list-style-type: none;
   color: white;
   text-decoration: none;
 
 }
 .Archie p{
-  margin-top:4vh;
-  margin-left:1vh;
+  margin-top:1.5vw;
+  margin-left:1vw;
   color: white;  
 }
 .ArchiePhoto{
   background-image: url('IMG_0123.JPG');
   background-position: center;
   background-size: 100% 100%;
-  height: 40vh;
-  width: 30vh;
+  height: 20vw;
+  width: 15vw;
   justify-self: center;
-  margin-left: 15vh;
-  margin-top: 2vh;
+  margin-left: 5vw;
+  margin-top: 1vw;
 }
