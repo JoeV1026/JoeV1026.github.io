@@ -6,7 +6,6 @@
 }
 
 body {
-  min-height: 100vh;
   background-color: black;
   
 }
@@ -15,7 +14,7 @@ body {
   width: 100vw;
   display:flex;
   background-color: black;
-  padding: 15px;
+  padding: 1vw;
   border-style: solid;
   border-color: white;
   justify-content: space-between; 
@@ -28,7 +27,7 @@ body {
   font-size: .9vw;
   border-bottom: solid;
   border-color: white;
-  border-width: 1px;
+  border-width: .1vw;
 
 }
 .navbar li a{
@@ -37,7 +36,7 @@ body {
   list-style-type: none;
   color:white;
   text-decoration: none;
-  margin-left: 40px;
+  margin-left: 2vw;
 }
 
 .HomeContent{
@@ -108,7 +107,7 @@ body {
   display: flex;
   justify-content: center;
   color: white;
-  font-size: 2.1;
+  font-size: 1.1vw;
 }
 .AboutContent{
   width: 100%;
@@ -143,8 +142,8 @@ body {
   left:50%;
   z-index:-1;
   translate: -50% -50%;
-  padding: 3px;
-  border-radius: 10px;
+  padding: .15vw;
+  border-radius: .5vw;
   animation: 3s spin linear infinite;
 }
 @keyframes spin {
