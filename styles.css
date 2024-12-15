@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 *{
   margin: 0;
   padding: 0;
@@ -6,348 +9,584 @@
 }
 
 body {
-  background-color: black;
-  
-}
-.header {
-  position: fixed;
-  width: 100vw;
-  display:flex;
-  background-color: black;
-  padding: 1vw;
-  border-style: solid;
-  border-color: white;
-  justify-content: space-between; 
+  background-color: transparent;
 }
 
-.logo{
-  color: white;
+.UnderHomeContent {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  width: 20vw;
+  height: 70vh;
+  background-image: url('coder.png'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  z-index: -1;
+  border-radius: 10vw;
+}
+
+.HomeBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(45deg, white, #567CFF, #8EA8FF, #7AF8FF, #D875FF, #8D4BE0, white, #567CFF);
+  z-index: -2;
+  background-size: 300% 300%;
+  animation: color 12s ease-in-out infinite;
+}
+@keyframes color{
+  0%{
+    background-position: 0 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.header {
+  list-style: none;
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  padding: 12px;
+  border-bottom: solid;
+  border-color: #7AF8FF;
+  border-width: 1px;
+  justify-content: space-between; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.logo {
+  color: black;
   font-family: 'Courier New', monospace;
   font-weight: 400;
   font-size: .9vw;
   border-bottom: solid;
-  border-color: white;
+  border-color: black;
   border-width: .1vw;
-
 }
-.navbar li a{
+
+.navbar li a {
   font-family: 'Courier New', monospace;
   font-size: 1vw;
   list-style-type: none;
-  color:white;
   text-decoration: none;
-  margin-left: 2vw;
+  margin-right: 2vw;
+  color: black;
+  font-weight: bold;
 }
 
-.HomeContent{
+.HomeContent {
+  position: relative;
   justify-content: center;
   align-content: center;
+  text-align: center;
   width: 100%;
   min-height: 100vh;
-  
 }
-.HomeContent .HomeName{
+
+.HomeContent .HomeName {
   position: relative;
-  display: flex;
   color: white;
+  display: flex;
   font-family: 'Courier New', monospace;
   font-size: 12vw;
   justify-content: center;
-  animation: glitch 5s infinite;
+  
 }
-.HomeName::before, .HomeName::after{
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  color: white;
-  background: black;
-  overflow: hidden;
-  clip: rect(0, 900px, 0, 0);
-  animation: glitch 5.5s infinite;
+.beginningname{
+  text-shadow: 
+    1px 1px 0px #567CFF, 
+    -1px -1px 0px #8EA8FF,
+    1px -1px 0px #7AF8FF,
+    -1px 1px 0px #D875FF,
+    2px 2px 0px #8D4BE0, 
+    -2px -2px 0px #567CFF, 
+    2px -2px 0px #8EA8FF, 
+    -2px 2px 0px #7AF8FF;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-.HomeName::before{
-  left: 17.5vw;
-  text-shadow: -2px 0 red;
-  animation-duration: 5s; 
+.lastname{
+  text-shadow: 
+    1px 1px 0px #567CFF, 
+    -1px -1px 0px #8EA8FF,
+    1px -1px 0px #7AF8FF,
+    -1px 1px 0px #D875FF,
+    2px 2px 0px #8D4BE0, 
+    -2px -2px 0px #567CFF, 
+    2px -2px 0px #8EA8FF, 
+    -2px 2px 0px #7AF8FF;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-.HomeName::after {
-  left: 16vw;
-  text-shadow: -2px 0 blue;
-  animation-duration: 5.2s;
-}
-@keyframes glitch {
-  0% {
-    clip: rect(42px, 9999px, 44px, 0);
-    transform: skew(0.4deg);
-  }
-  20%{
-    clip: rect(15px, 9999px, 56px, 0);
-    transform: skew(0.3deg);
-  }
-  40%{
-    clip: rect(85px, 9999px, 140px, 0);
-    transform: skew(0.5deg);
-  }
-  60%{
-    clip: rect(35px, 9999px, 90px, 0);
-    transform: skew(0.6deg);
-  }
-  80%{
-    clip: rect(42px, 9999px, 44px, 0);
-    transform: skew(0.4deg);
-  }
-  100%{
-    clip: rect(15px, 9999px, 56px, 0);
-    transform: skew(0.3deg);
-  }
+.middlename {
+  display: inline-block;
+  color: transparent;
+  background: transparent; 
+  -webkit-background-clip: text;
+  background-clip: text; 
+  -webkit-text-stroke: .2vw white;
+  margin-right: 1vw;
 }
 
 .HomeContent .HomeAbout {
   font-family: 'Courier New', monospace;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1vw;
+  background: white;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  border-right: 3px solid black;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0; 
+  animation: typing 4s steps(30, end) forwards, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 30%; 
+  }
+}
+
+@keyframes blink {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
+
+.blur {
   display: flex;
-  justify-content: center;
-  color: white;
-  font-size: 1.1vw;
-}
-.AboutContent{
-  width: 100%;
-  min-height: 37vw;
-  border-bottom: solid;
-  border-color: white;
-}
-
-.AboutContent .AboutText {
-  background: black;
-  position: relative;
-  min-height: 28.9vw;
-  float: left;
-  color: white;
-  width: 50vw;
-  margin-top: 1.5vw;
-  margin-left:3vw;
-}
-@property --angle{
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-.AboutText::after, .AboutText::before{
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-image: conic-gradient(from var(--angle), blue, purple, green, orange, yellow, pink, brown);
-  top: 50%;
-  left:50%;
-  z-index:-1;
-  translate: -50% -50%;
-  padding: .15vw;
-  border-radius: .5vw;
-  animation: 3s spin linear infinite;
-}
-@keyframes spin {
-  from{
-    --angle: 0deg;
-  }
-  To{
-    --angle: 360deg;
-  }
-}
-.AboutText::before{
-  filter: blur(1.5rem);
-  opacity: 0.5;
-}
-.AboutContent .AboutText .AboutTextHeader {
-  margin-left: 2vw;
-  margin-top: 2vw;
-  color: white;
-  font-size: 1.7vw;
-  margin-right: 20vw;
-  margin-bottom: 3vw;
-  border-bottom: solid;
-  border-color: white;
-  width: 11.5vw;
-}
-.AboutContent .AboutText .AboutTextText {
+  align-items: center;
+  overflow: hidden;
+  height: 5vh;
+  width: 100vw;
   border-top: solid;
   border-bottom: solid;
-  border-color: white;
+  border-color: #7AF8FF;
+  background-color: lightgray;
+}
+.scroll{
+  white-space: nowrap;
+  margin: 0 2em;
+}
+.scroll div{
+  display: flex;
+  gap: 2em;
+}
+.scroll p {
+  font-size: 2em;
   color: white;
-  font-size: 1.3vw;
-  padding-top: 3vw;
-  min-height: 27vw;
+  font-weight: bold;
+  text-shadow: 
+    1px 1px 0px #567CFF, 
+    -1px -1px 0px #8EA8FF,
+    1px -1px 0px #7AF8FF,
+    -1px 1px 0px #D875FF,
+    2px 2px 0px #8D4BE0, 
+    -2px -2px 0px #567CFF, 
+    2px -2px 0px #8EA8FF, 
+    -2px 2px 0px #7AF8FF;
+  line-height: 10px;
 }
-.Education{
-  margin-left: 55vw; 
-  min-height: 40vw;
-  width: 40%;
+.RightToLeft{
+  animation: RightToLeft 35s infinite linear
 }
-.Community{
-  justify-self: center;
-  border-bottom: solid;
-  border-color: blue;
-  color:white;
-}
-.GATECH{
-  float: left;
-  background-image: url('images.jpg');
-  min-height: 11.5vw;
-  width: 11.5vw;
-  background-position: center;
-  margin-top: 2vw;
-  margin-left: 2vw;
-  animation: bounce 2s infinite;
-}
-.FSC {
-  float: right;
-  background-image: url('FSCpng.png');
-  background-position: center;
-  background-size: 100% 100%;
-  min-height: 11.5vw;
-  width: 11.5vw;
-  background-position: center;
-  margin-top: 2vw;
-  margin-right: 5vw;
-  animation: bounce 2s infinite;
-}
-@keyframes bounce {
-  0%{
-    transform: translateY(0);
+@keyframes RightToLeft {
+  from {
+    transform: translateX(0%);
   }
-  40%{
-    transform:translateY(-30px);
+  to {
+    transform: translateX(-65%);
   }
-  60%{
-    transform:translateY(0);
+}
+
+.About {
+  position: relative;
+  width: 100vw;
+  height: 75vh;
+  background-color: white;
+}
+.headshot {
+  background-image: url('IMG_1626 (1).jpeg');
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  border-radius: 2em;
+  position: absolute;
+  top: 17%; 
+  left: 5%; 
+  width: 20vw;
+  height: 50vh;
+  z-index: 1;
+}
+.Archie {
+  background-image: url('IMG_0123.JPG');
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  border-radius: 2em;
+  position: absolute;
+  top: 50%; 
+  left: 26%; 
+  width: 10vw;
+  height: 25vh;
+  z-index: 1;
+}
+.AboutMe{
+  position: absolute;
+  top: 8%;
+  left: 45%;
+  width: 50vw;
+  height: 20vh;
+  background-color: white;;
+}
+.AboutMe h1 {
+  color: black;
+  width: 30%;
+  font-weight: bold;
+  font-size: 3vw;
+  margin-bottom: 2vh;
+  animation: AboutMeMover 10s infinite linear
+}
+@keyframes AboutMeMover {
+  0% {
+    transform: translateX(0%);
   }
-  80%{
-    transform:translateY(-15px);
+  50% {
+    transform: translateX(220%);
   }
   100%{
-    transform: translateY(0);
+    transform: translateX(0%);
   }
 }
-.GeorgiaTechInfo{
-  float: left;
-  color: white;
-  width: 50%;
-  margin-top: 1vw;
-  border-right: solid;
-  border-color: blue;
-}
-.GeorgiaTechInfo .GeorgiaClasses{
-  font-size: 0.9vw;
-  list-style-type: none;
-}
-.FarmingdaleInfo .FSCClasses{
-  font-size: 0.9vw;
-  list-style-type: none;
-}
-.FarmingdaleInfo{
-  margin-left: .3vw;
-  width: 19vw;
-  margin-top: 1vw;
-  float: right;
-  color: white;
-}
-.ProjectsContent{
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  z-index: -1;
-}
-.ProjectContainer{
-  position: relative;
-  height: 85vh;
-  width: auto;
-  margin: 15vh;
-  top: 0;
-
-}
-.ProjectsLight{
-  text-shadow: 0 0 10px #03bcf4;
-  position: absolute;
-  margin-left: 5vh;
-  width: 50vh;
-  font-size: 10vh;
-  rotate: -30deg;
-  color:white;
-  font-family: 'Style Script';
-  z-index: 1;
-  animation: flicker 5s linear infinite;
-}
-
-.ContactContent{
-  border-top: solid;
-  border-color: white;
-  display: flex;
-  background-color: black;
-  height: 25vw;
-  width: 100%;
-}
-.AroundContactText{
-  height:25vw;
-  width: 39vw;
-  border-right:solid;
-  border-color: white;
-}
-.Text1{
-  font-family: 'Trebuchet MS', sans-serif;
-  min-height: 5vw;  
-  font-size: 5vw;
-  margin-left: 4vw;
-  -webkit-text-stroke: 3px white;
-}
-.Text2{
-  font-family: 'Trebuchet MS', sans-serif;
-  min-height: 5vw;  
-  font-size: 5vw;
-  color: white;
-  margin-left: 8vw;
-  
-}
-.Text3{
-  font-family: 'Trebuchet MS', sans-serif;
-  min-height: 5vw;  
-  font-size: 5vw;
-  margin-left: 14vw;
-  -webkit-text-stroke: 3px white;
-}
-.ContactLinks {
-  width: 25vw;
-  float: right;
-  border-right: solid;
-  border-color: white;
+.AboutMe p{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1vw;
 }
-.ContactLinks p{
-  margin-top: 1.5vw;
-  margin-left: 1vw;
-  color:white;
-}
-.ContactLinks a{
-  display:block;
-  width: 50vw;
-  margin-top: 2.5vw;
-  margin-left: 1vw;
-  list-style-type: none;
-  color: white;
-  text-decoration: none;
 
+.WorkExperience {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  padding: 10px 20px;
+  border-bottom: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: #8D4BE0;
+  background: white;
+  font-size: 1.5em;
+  color: #567CFF;
+  position: relative;
+  font-weight: bold;
+  
 }
-.Archie p{
-  margin-top:1.5vw;
-  margin-left:1vw;
-  color: white;  
+
+
+
+.School {
+  position: absolute;
+  top: 35%;
+  left: 63.5%;
+  padding: 10px 20px;
+  border-bottom: solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: #8D4BE0;
+  background: white;
+  font-size: 1.5em;
+  color: #567CFF;
+  position: relative;
+  font-weight: bold;
+  
 }
-.ArchiePhoto{
-  background-image: url('IMG_0123.JPG');
+.WorkContent{
+  position: absolute;
+  width: 25%;
+  height: 43%;
+  background-color: white;;
+  top: 45%;
+  left: 45%;
+  border-right: solid;
+}
+.sb{
+  font-size: 1.5vw;
+  margin-top: 2.5%;  
+  color: #8EA8FF;
+}
+.wal{
+  font-size: 1.5vw;
+  margin-top: 2.5%;
+  color: #8EA8FF;
+}
+.WorkContent p{
+  font-weight: bold;
+  margin-top: 1%;
+  margin-left: 2%;
+}
+.SchoolContent{
+  padding-left: 2%;
+  position: absolute;
+  width: 25%;
+  height: 43%;
+  background-color: white;
+  top: 45%;
+  left: 70%;
+}
+.tech{
+  font-size: 1.5vw;
+  margin-top: 2.5%;  
+  color: #8EA8FF;
+}
+.fsc{
+  font-size: 1.5vw;
+  margin-top: 2.5%;
+  color: #8EA8FF;
+}
+.SchoolContent p{
+  font-weight: bold;
+  margin-top: 1%;
+  margin-left: 2%;
+}
+.ProjectContent{
+position: relative;
+width: 100vw;
+height: 60vh;  
+}
+.ProjectH{
+  text-shadow: 
+    1px 1px 0px #567CFF, 
+    -1px -1px 0px #8EA8FF,
+    1px -1px 0px #7AF8FF,
+    -1px 1px 0px #D875FF,
+    2px 2px 0px #8D4BE0, 
+    -2px -2px 0px #567CFF, 
+    2px -2px 0px #8EA8FF, 
+    -2px 2px 0px #7AF8FF;
+  width: 38vw;
+  margin-left: 3%;
+  font-weight: bold;
+  font-size: 3vw;
+  border-bottom: solid;
+  border-width: 2%;
+  animation: Underline 10s infinite linear
+}
+@keyframes Underline {
+  0%{
+    border-color: #567CFF;
+  }
+  20%{
+    border-color: #8EA8FF;
+  }
+  40%{
+    border-color: #7AF8FF;
+  }
+  60%{
+    border-color: #D875FF;
+  }
+  80%{
+    border-color: #8EA8FF;
+  }
+  100%{
+    border-color: #567CFF;
+  }
+}
+
+.ProjectsSection{
+  position: absolute;
+  top: 8vh;
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ProjectNames{
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 5vh;
+  font-weight: bold;
+  font-size: 1vw;
+}
+.g{
+  margin-left: 11vw;
+  margin-right: 11vw;
+}
+.Project1 {
+  position: relative;
+  cursor: pointer;
+  width: 20vw;
+  height: 40vh;
+  border-radius: 2vw;
+  margin-right: 2vw;
+  background-image: url("project1.avif");
+  background-size: cover;
+  background-position: center;
+}
+
+.Project1::before {
+  content: "Developed an Android application using Android Studio that allows students to manage their assignments efficiently. Features include adding and removing tasks and organizing them based on predefined preferences for streamlined workflow."; 
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white; 
+  display: flex; 
+  align-items: flex-start; 
+  justify-content: center; 
+  padding-top: 20%; 
+  text-align: center;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: inherit;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  font-family: sans-serif;
+  font-size: 1vw;
+}
+
+.Project1:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.Project2 {
+  position: relative;
+  cursor: pointer;
+  width: 20vw;
+  height: 40vh;
+  border-radius: 2vw;
+  margin-right: 2vw;
+  background-image: url("project2.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.Project2::before {
+  content: "Developed an Android application using Android Studio that enables users to access their personalized Spotify Wrapped from predefined timeframes, such as one week, one month, or one year ago.";
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white; 
+  display: flex; 
+  align-items: flex-start; 
+  justify-content: center; 
+  padding-top: 20%; 
+  text-align: center;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: inherit;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  font-family: sans-serif;
+  font-size: 1vw;
+}
+
+.Project2:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+.Project3 {
+  position: relative;
+  cursor: pointer;
+  width: 20vw;
+  height: 40vh;
+  border-radius: 2vw;
+  margin-right: 2vw;
+  background-image: url("project3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.Project3::before {
+  content: "Developed a basic console-based application using Java in IntelliJ IDEA that enables users to manage grocery lists. The application incorporates a SQL database for data storage, allowing users to create, organize, add to, and remove items from grocery lists based on predefined preferences.";
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white; 
+  display: flex; 
+  align-items: flex-start; 
+  justify-content: center; 
+  padding-top: 20%; 
+  text-align: center;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: inherit;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  font-family: sans-serif;
+  font-size: 1vw;
+}
+.Project3:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.ContactContent{
+  position: relative;
+  width: 100vw;
+  height: 10vh;
+}
+.ContactInfo{
+  position:absolute;
+  width: 50vw;
+  height: 10vh;
+  
+}
+.ContactContent h1{
+  
+  font-weight: bold;
+  font-size: 3vw;
+  padding-left: 1%;
+  margin-bottom: 2vh;
+}
+.ContactContent p{
+  
+  padding-left: 1%;
+  font-weight: bold;
+}
+.h{
+  margin-bottom: 2vh;
+}
+.linkedIn{
+  top: 2vh;
+  left: 90%;
+  position: absolute;
+  width: 5vw;
+  height: 10vh;
+  background-image: url("linkedin.jpg");
   background-position: center;
   background-size: 100% 100%;
-  height: 20vw;
-  width: 15vw;
-  justify-self: center;
-  margin-left: 5vw;
-  margin-top: 1vw;
+  border-radius: 1vw;
+  cursor: pointer;
+
 }
+
