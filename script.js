@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightIcon = themeToggle.querySelector('.light-icon');
     const darkIcon = themeToggle.querySelector('.dark-icon');
 
-    // Check for saved theme preference or default to light mode
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    // Check for saved theme preference or default to dark mode
+    const savedTheme = localStorage.getItem('theme') || 'dark';
     
     // Apply saved theme
     if (savedTheme === 'light') {
@@ -257,6 +257,121 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize
     updateSlider();
+});
+
+// Project Modal Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const expandButtons = document.querySelectorAll('.expand-btn');
+    const modals = document.querySelectorAll('.modal-overlay');
+    const closeButtons = document.querySelectorAll('.modal-close');
+    
+    // Prevent body scroll when modal is open (works on mobile too)
+    function preventBodyScroll() {
+        const scrollY = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function restoreBodyScroll() {
+        const scrollY = document.body.style.top;
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
+        if (scrollY) {
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        }
+    }
+    
+    // Open modal when expand button is clicked
+    expandButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const projectId = button.getAttribute('data-project');
+            const modal = document.getElementById(`modal-${projectId}`);
+            
+            if (modal) {
+                modal.classList.add('active');
+                preventBodyScroll();
+                // Scroll modal to top on mobile
+                setTimeout(() => {
+                    modal.scrollTop = 0;
+                }, 100);
+            }
+        });
+    });
+    
+    // Close modal when close button is clicked
+    closeButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const modal = button.closest('.modal-overlay');
+            if (modal) {
+                modal.classList.remove('active');
+                restoreBodyScroll();
+            }
+        });
+        
+        // Touch support for close button
+        button.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const modal = button.closest('.modal-overlay');
+            if (modal) {
+                modal.classList.remove('active');
+                restoreBodyScroll();
+            }
+        });
+    });
+    
+    // Close modal when clicking outside the modal content
+    modals.forEach(modal => {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                restoreBodyScroll();
+            }
+        });
+        
+        // Touch support for outside click
+        modal.addEventListener('touchend', (e) => {
+            if (e.target === modal) {
+                e.preventDefault();
+                modal.classList.remove('active');
+                restoreBodyScroll();
+            }
+        });
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            modals.forEach(modal => {
+                if (modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+                    restoreBodyScroll();
+                }
+            });
+        }
+    });
+    
+    // Prevent modal content clicks from closing modal
+    modals.forEach(modal => {
+        const modalContent = modal.querySelector('.modal-content');
+        if (modalContent) {
+            modalContent.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+            
+            modalContent.addEventListener('touchend', (e) => {
+                e.stopPropagation();
+            });
+        }
+    });
 });
 
 // Console message with glitch theme
