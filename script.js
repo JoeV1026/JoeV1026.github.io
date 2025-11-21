@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightIcon = themeToggle.querySelector('.light-icon');
     const darkIcon = themeToggle.querySelector('.dark-icon');
 
-    // Check for saved theme preference or default to dark mode
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    // Check for saved theme preference or default to light mode
+    const savedTheme = localStorage.getItem('theme') || 'light';
     
     // Apply saved theme
     if (savedTheme === 'light') {
