@@ -285,22 +285,66 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
+    // Function to open modal
+    function openModal(button) {
+        const projectId = button.getAttribute('data-project');
+        const modal = document.getElementById(`modal-${projectId}`);
+        
+        if (modal) {
+            modal.classList.add('active');
+            preventBodyScroll();
+            // Scroll modal to top on mobile
+            setTimeout(() => {
+                modal.scrollTop = 0;
+            }, 100);
+        }
+    }
+    
     // Open modal when expand button is clicked
     expandButtons.forEach(button => {
+        let touchStartTime = 0;
+        let hasMoved = false;
+        let lastTouchHandled = false;
+        
+        // Track touch start
+        button.addEventListener('touchstart', (e) => {
+            touchStartTime = Date.now();
+            hasMoved = false;
+            lastTouchHandled = false;
+        }, { passive: true });
+        
+        // Track if user moved finger (to distinguish from tap)
+        button.addEventListener('touchmove', () => {
+            hasMoved = true;
+        }, { passive: true });
+        
+        // Handle touch end
+        button.addEventListener('touchend', (e) => {
+            const touchDuration = Date.now() - touchStartTime;
+            // Only trigger if it was a quick tap (not a long press or swipe)
+            if (!hasMoved && touchDuration < 300) {
+                e.preventDefault();
+                e.stopPropagation();
+                lastTouchHandled = true;
+                openModal(button);
+                // Reset after a short delay to allow click event to check it
+                setTimeout(() => {
+                    lastTouchHandled = false;
+                }, 300);
+            }
+        }, { passive: false });
+        
+        // Handle click (for desktop and as fallback for mobile browsers that don't fire touchend properly)
         button.addEventListener('click', (e) => {
+            // If touch was already handled, prevent click from firing to avoid double-trigger
+            if (lastTouchHandled) {
+                e.preventDefault();
+                e.stopPropagation();
+                return;
+            }
             e.preventDefault();
             e.stopPropagation();
-            const projectId = button.getAttribute('data-project');
-            const modal = document.getElementById(`modal-${projectId}`);
-            
-            if (modal) {
-                modal.classList.add('active');
-                preventBodyScroll();
-                // Scroll modal to top on mobile
-                setTimeout(() => {
-                    modal.scrollTop = 0;
-                }, 100);
-            }
+            openModal(button);
         });
     });
     

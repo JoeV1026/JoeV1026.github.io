@@ -924,6 +924,9 @@ section::after {
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
     min-height: 44px;
+    pointer-events: auto;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .expand-btn:hover {
