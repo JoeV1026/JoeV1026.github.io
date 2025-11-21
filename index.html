@@ -3,79 +3,621 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joseph Velasquez Portfolio</title>
-    <link rel="stylesheet" href="styles.css" media="screen and (min-width: 1024px)">
-    <link rel="stylesheet" href="styles-phone.css" media="screen and (max-width: 768px)">
+    <meta name="description" content="CS Student Portfolio - Showcasing projects and skills">
+    <title>CS Student Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <header class="header">
-        
-        <div class = "logo">Velasquez</div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="#home" class="glitch-text" data-text="JOSEPH">JOSEPH</a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+                <svg class="light-icon" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/>
+                </svg>
+                <svg class="dark-icon" fill="currentColor" viewBox="0 0 24 24" style="display: none;">
+                    <path d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"/>
+                </svg>
+            </button>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
-        <div class="navbar">
-            <li class="navbar">      
-                <a class="HomeLink" href="#HomeL">//Home</a>
-                <a class="AboutLink" href="#AboutL">//About</a>
-                <a class="ProjectsLink" href="#ProjectsL">//Projects</a>
-                <a class="ContactLink" href="#ContactL">//Contact</a>
-            </li>
-        </div>
-    
-        
-    </header>
-    <div class="HomeContent" id="HomeL">
-        <div class="AroundHomeName">
-            <h1 class="HomeName" data-text="Velasquez"><span class="beginningname">Vel</span><span class="middlename">asq</span><span class="lastname">uez</span></h1>
-        </div>
-        <div class="AroundHomeAbout">
-        <div class="HomeAbout">//Software Developer //Aspiring Intern //Student </div>
-        </div>
-    </div>
-    <div class="UnderHomeContent"></div>
-    <div class="HomeBackground"></div> 
-    <div class="blur" id="AboutL">
-        
-    </div>    
-    <div class="About">
-        <div class="headshot"></div>
-        <div class="Archie"></div>
-        <div class="AboutMe">
-            <h1>About Me</h1>
-            <p>Hi! My name is Joseph, but most people call me Joey. I’m currently pursuing a degree in Computer Science at Georgia Tech and expect to graduate in December 2026. I’m originally from New York, but now in Atlanta. Academically, I’m confident I can balance studying and working at Starbucks. I also enjoy attending different club meetings on campus to see what sparks my interest. However, I try my best to build not just connections, but friendships. When I’m not studying or working, you’ll find me at a social event. Where I eat free food and meet new people!
-                Outside of school, I either work or teach myself something new. Recently, I’ve been learning guitar and have made lots of progress. I’m also teaching myself all about machine learning and data science. I even found a broken DJ set by a dumpster, noticed it was broken, fixed it, and started teaching myself how to use it. I’d say I’m pretty self-sufficient. I pay for my own housing, cook my own meals, and stay organized. I have to give credit to my grandma for the organized part, she always made me keep my room in order which transferred to my life. Moving to a new state and living on my own was a big step, but so far, it’s been an amazing journey! I always start my mornings at coffee shops, checking emails, and staying active on LinkedIn.
-                This is the free-trial of who I am, but feel free to reach out! If you’re a hiring manager, I hope this highlights my determination, resourcefulness, sociability, organization, and passion for learning. You can find my contact details at the bottom of this page or use the navigation links at the top. Thanks for stopping by, and I hope you have an incredible day!
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Hello, I'm <span class="highlight glitch-text-large" data-text="Joseph">Joseph</span> <span class="highlight glitch-text-large" data-text="Velasquez">Velasquez</span>
+                </h1>
+                <p class="hero-subtitle typing-subtitle">
+                    Who Am I <span class="typing-text" id="typingText"></span><span class="typing-cursor">|</span>
                 </p>
+                <p class="hero-description">
+                    Passionate about creating innovative solutions and building amazing software.
+                    Welcome to my portfolio!
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="NewProjectContent">
-        <div class="NewProject1">
-            <video class = "Project1vid" src="Project1.mp4" autoplay="" muted="" width = 63.6%></video>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-arrow"></div>
         </div>
-    </div>
-    <div class="ProjectContent" id="ProjectsL">
-        <h1 class="ProjectH">My Personal Projects:</h1>
-        <div class="ProjectNames">
-            <p>College Scheduler App</p>
-            <p class = g>Spoifty Wrapped App</p>
-            <p>Joey's Grocery Organizer</p>
-        </div>
-        <div class="ProjectsSection">
-            <button class="Project1"></button>
-            <button class="Project2"></button>
-            <button class="Project3"></button>
-        </div>
+    </section>
 
-    </div>
-    <div class="ContactContent" id="ContactL">
-        <div class="ContactInfo">
-            <h1>Contact Me</h1>
-            <p>josephvelasquez1026work@gmail.com</p>
-            <p class="h">+1(516)737-3288</p>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="python-file">
+                    <div class="code-header">
+                        <div class="code-window-controls">
+                            <span class="control red"></span>
+                            <span class="control yellow"></span>
+                            <span class="control green"></span>
+                        </div>
+                        <div class="code-filename">about_me.py</div>
+                    </div>
+                    <div class="code-body">
+                        <div class="code-line">
+                            <span class="line-number">1</span>
+                            <span class="code-comment"># About Joseph Velasquez</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">2</span>
+                            <span class="code-keyword">class</span>  <span class="code-class">AboutMe</span>:
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">3</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">4</span>
+                            <span class="code-indent">    </span><span class="code-keyword">def</span>  <span class="code-function">describe</span>(<span class="code-param">self</span>):
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">5</span>
+                            <span class="code-indent">        </span><span class="code-keyword">return</span> <span class="code-string">"""</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">6</span>
+                            <span class="code-indent">        </span><span class="code-string">Hi! I'm Joseph Velasquez, a senior computer science student at Georgia Tech </span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">7</span>
+                            <span class="code-indent">        </span><span class="code-string">specializing in AI and Devices. I enjoy building intelligent systems and </span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">8</span>
+                            <span class="code-indent">        </span><span class="code-string">data-driven tools, from machine learning models and search algorithms to </span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">9</span>
+                            <span class="code-indent">        </span><span class="code-string">valuation predictors and custom classifiers. I've worked with technologies </span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">10</span>
+                            <span class="code-indent">        </span><span class="code-string">like PyTorch, scikit-learn, Neo4j, LangChain, and the OpenAI API, and I </span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">11</span>
+                            <span class="code-indent">        </span><span class="code-string">currently contribute to SmartPath AI by developing graph-based retrieval </span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">12</span>
+                            <span class="code-indent">        </span><span class="code-string">systems and AI-powered study tools. I value reliability, teamwork, and </span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">13</span>
+                            <span class="code-indent">        </span><span class="code-string">continual learning, and I'm excited to keep growing in AI, machine </span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">14</span>
+                            <span class="code-indent">        </span><span class="code-string">learning, and software engineering</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="line-number">15</span>
+                            <span class="code-indent">        </span><span class="code-string">        """</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <a href="https://www.linkedin.com/in/joseph-velasquez-7263ba240/">
-            <button class="linkedIn"></button>
-        </a>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-slider-container">
+                <button class="slider-btn slider-btn-left" id="prevBtn" aria-label="Previous projects">
+                    <svg fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                </button>
+                <div class="projects-slider" id="projectsSlider">
+                    <div class="projects-grid">
+                        <div class="project-card">
+                    <div class="project-icon">🚢</div>
+                    <h3 class="project-title">Titanic Survival Prediction</h3>
+                    <p class="project-date">August 2025 – September 2025</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">scikit-learn</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">NumPy</span>
+                        <span class="tag">Machine Learning</span>
+                    </div>
+                    <button class="expand-btn" data-project="titanic">Expand Details</button>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🎮</div>
+                    <h3 class="project-title">AI Text Adventure Game</h3>
+                    <p class="project-date">January 2025 – February 2025</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Search Algorithms</span>
+                        <span class="tag">AI</span>
+                    </div>
+                    <button class="expand-btn" data-project="adventure">Expand Details</button>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">📊</div>
+                    <h3 class="project-title">Company Valuation Predictor</h3>
+                    <p class="project-date">October 2025 – Present</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">scikit-learn</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Financial Analysis</span>
+                    </div>
+                    <button class="expand-btn" data-project="valuation">Expand Details</button>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🤖</div>
+                    <h3 class="project-title">Software Engineer @ SmartPath AI</h3>
+                    <p class="project-date">Big Data Big Impact (BDBI) | Georgia Tech</p>
+                    <p class="project-date">January 2025 – Present | Atlanta, GA</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Neo4j</span>
+                        <span class="tag">LangChain</span>
+                        <span class="tag">OpenAI API</span>
+                        <span class="tag">Git</span>
+                    </div>
+                    <button class="expand-btn" data-project="smartpath">Expand Details</button>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🎵</div>
+                    <h3 class="project-title">Spotify Playlist Manager</h3>
+                    <p class="project-date">November 2024 – December 2024</p>
+                    <div class="project-tags">
+                        <span class="tag">C</span>
+                        <span class="tag">Data Structures</span>
+                        <span class="tag">Algorithm Development</span>
+                    </div>
+                    <button class="expand-btn" data-project="playlist">Expand Details</button>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🛒</div>
+                    <h3 class="project-title">Joey's Grocery List Organizer</h3>
+                    <p class="project-date">September 2024 – October 2024</p>
+                    <div class="project-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Data Structures</span>
+                    </div>
+                    <button class="expand-btn" data-project="grocery">Expand Details</button>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🎧</div>
+                    <h3 class="project-title">Spotify Wrapped App</h3>
+                    <p class="project-date">February 2024 – April 2024 | Georgia Tech</p>
+                    <div class="project-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Android Studio</span>
+                        <span class="tag">API Development</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Teamwork</span>
+                    </div>
+                    <button class="expand-btn" data-project="wrapped">Expand Details</button>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">📅</div>
+                    <h3 class="project-title">College Scheduler App</h3>
+                    <p class="project-date">January 2024 – February 2024 | Georgia Tech</p>
+                    <div class="project-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Android Studio</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Software Development</span>
+                        <span class="tag">Teamwork</span>
+                    </div>
+                    <button class="expand-btn" data-project="scheduler">Expand Details</button>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">⚽</div>
+                    <h3 class="project-title">Watching Sports</h3>
+                    <p class="project-date">November 2023</p>
+                    <div class="project-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Object-Oriented Programming</span>
+                        <span class="tag">Software Development</span>
+                        <span class="tag">Algorithm Development</span>
+                    </div>
+                    <button class="expand-btn" data-project="sports">Expand Details</button>
+                </div>
+                    </div>
+                </div>
+                <button class="slider-btn slider-btn-right" id="nextBtn" aria-label="Next projects">
+                    <svg fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Programming Languages</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">C</span>
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">AI & ML</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">PyTorch</span>
+                        <span class="skill-item">LangChain</span>
+                        <span class="skill-item">OpenAI API</span>
+                        <span class="skill-item">Neo4j</span>
+                        <span class="skill-item">NumPy</span>
+                        <span class="skill-item">Pandas</span>
+                        <span class="skill-item">scikit-learn</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Developer Tools & Platforms</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">MySQL</span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">Firebase</span>
+                        <span class="skill-item">Linux</span>
+                        <span class="skill-item">Jupyter Notebook</span>
+                        <span class="skill-item">Google Colab</span>
+                        <span class="skill-item">Anaconda</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-description">
+                I'm always open to discussing new projects, creative ideas, or opportunities.
+                Feel free to reach out!
+            </p>
+            <div class="contact-links">
+                <a href="https://github.com/JoeV1026" class="contact-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    <span>GitHub</span>
+                </a>
+                <a href="mailto:josephvelasquez1026work@gmail.com?subject=Contact%20from%20Portfolio" class="contact-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    <span>Email</span>
+                </a>
+                <a href="https://www.linkedin.com/in/joev1026/" class="contact-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://www.instagram.com/joey.v1026/" class="contact-link" target="_blank" rel="noopener noreferrer">
+                    <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    <span>Instagram</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Joseph Velasquez Portfolio. <span class="glitch-inline" data-text="Built with ❤️">Built with ❤️</span></p>
+        </div>
+    </footer>
+
+    <!-- Project Modals -->
+    <!-- Titanic Survival Prediction Modal -->
+    <div class="modal-overlay" id="modal-titanic">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-icon">🚢</div>
+            <h2 class="modal-title">Titanic Survival Prediction</h2>
+            <p class="modal-date">August 2025 – September 2025</p>
+            <div class="modal-body">
+                <p class="modal-description">
+                    Preprocessed and engineered features from Kaggle's Titanic dataset using pandas to analyze survival correlations. 
+                    Trained and tuned Decision Tree, Random Forest, and Multi-Layer Perceptron using scikit-learn. 
+                    Designed a custom multi-objective Genetic Programming algorithm that evolved classifiers and made predictions 
+                    based on a cross-entropy loss function.
+                </p>
+                <p class="modal-results"><strong>Results:</strong> Achieved co-dominant performance across the ML models. The accuracy 
+                    between the classifiers ranged from 75% to 85%. My custom model received an accuracy of 82%.</p>
+                <div class="modal-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">scikit-learn</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">NumPy</span>
+                    <span class="tag">Machine Learning</span>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- AI Text Adventure Game Modal -->
+    <div class="modal-overlay" id="modal-adventure">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-icon">🎮</div>
+            <h2 class="modal-title">AI Text Adventure Game</h2>
+            <p class="modal-date">January 2025 – February 2025</p>
+            <div class="modal-body">
+                <p class="modal-description">
+                    Designed a search-based game environment requiring an agent to explore rooms and chests to find a hidden key. 
+                    Implemented BFS, DFS, A*, UCS, and Greedy to evaluate performance across cost, reward, and runtime.
+                </p>
+                <p class="modal-results"><strong>Results:</strong> Measured and analyzed algorithm efficiency, determining A* as the 
+                    most effective for dynamic search environments.</p>
+                <div class="modal-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Search Algorithms</span>
+                    <span class="tag">AI</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Company Valuation Predictor Modal -->
+    <div class="modal-overlay" id="modal-valuation">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-icon">📊</div>
+            <h2 class="modal-title">Company Valuation Predictor</h2>
+            <p class="modal-date">October 2025 – Present</p>
+            <div class="modal-body">
+                <p class="modal-description">
+                    Built a valuation analysis program to compute profitability, capital structure, and key financial ratios for publicly 
+                    traded companies. Designed a complete machine learning pipeline in Python, training Linear Regression and Random Forest 
+                    models using scikit-learn to predict P/E ratios.
+                </p>
+                <p class="modal-description">
+                    Preprocessed obtained data using Pandas, calculated ratios (P/E, ROA, ROE, D/E), created a structured modeling 
+                    DataFrame, and applied winsorization to control outliers. Evaluated model performance using RMSE, MAE, and R² for predictive accuracy.
+                </p>
+                <div class="modal-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">scikit-learn</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Financial Analysis</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SmartPath AI Modal -->
+    <div class="modal-overlay" id="modal-smartpath">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-icon">🤖</div>
+            <h2 class="modal-title">Software Engineer @ SmartPath AI</h2>
+            <p class="modal-date">Big Data Big Impact (BDBI) | Georgia Tech</p>
+            <p class="modal-date">January 2025 – Present | Atlanta, GA</p>
+            <div class="modal-body">
+                <p class="modal-description">
+                    Built an AI-powered study tool to assist students with last-minute exam preparation by tailoring questions based 
+                    on individual weaknesses and textbook references. Implemented graphRAG using Neo4j, LangChain, and OpenAI's API for 
+                    pdf retrieval and question generation.
+                </p>
+                <p class="modal-description">
+                    Designed a structured knowledge graph that improved question accuracy and content organization. 
+                    Collaborated in an agile environment, contributing to debugging, version control, AI development, and task deployments.
+                </p>
+                <div class="modal-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Neo4j</span>
+                    <span class="tag">LangChain</span>
+                    <span class="tag">OpenAI API</span>
+                    <span class="tag">Git</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spotify Playlist Manager Modal -->
+    <div class="modal-overlay" id="modal-playlist">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-icon">🎵</div>
+            <h2 class="modal-title">Spotify Playlist Manager</h2>
+            <p class="modal-date">November 2024 – December 2024</p>
+            <div class="modal-body">
+                <p class="modal-description">
+                    Developed a playlist management system in C using linked lists and dynamic memory allocation. 
+                    Implemented functions to add, remove, and search songs while managing pointers to ensure efficient memory usage.
+                </p>
+                <p class="modal-description">
+                    Implemented input validation, memory allocation checks, and boundary condition handling to prevent crashes, 
+                    memory leaks, and invalid operations. Utilized Visual Studio Code as the IDE for development, leveraging its debugging and testing tools.
+                </p>
+                <div class="modal-tags">
+                    <span class="tag">C</span>
+                    <span class="tag">Data Structures</span>
+                    <span class="tag">Algorithm Development</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Joey's Grocery List Organizer Modal -->
+    <div class="modal-overlay" id="modal-grocery">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-icon">🛒</div>
+            <h2 class="modal-title">Joey's Grocery List Organizer</h2>
+            <p class="modal-date">September 2024 – October 2024</p>
+            <div class="modal-body">
+                <p class="modal-description">
+                    Designed and implemented a shopping database allowing users to efficiently organize and maintain their grocery lists 
+                    based on built-in preferences. Utilized MySQL, Java, and IntelliJ to manage user accounts, enabling the addition, 
+                    deletion, organization, and history control of multiple grocery lists.
+                </p>
+                <p class="modal-description">
+                    Managed three databases (current order, order history, and user data) to store user information and order history.
+                </p>
+                <div class="modal-tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">Data Structures</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spotify Wrapped App Modal -->
+    <div class="modal-overlay" id="modal-wrapped">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-icon">🎧</div>
+            <h2 class="modal-title">Spotify Wrapped App</h2>
+            <p class="modal-date">February 2024 – April 2024 | Georgia Tech</p>
+            <div class="modal-body">
+                <p class="modal-description">
+                    Utilized Spotify's API to develop an app in Android Studio that retrieved Spotify Wrapped data, deepening my knowledge 
+                    of Java and version control with GitHub. Refined client communication by coordinating meetings with our personal TA, 
+                    providing project updates, and incorporating feedback to improve the application based on their preferences.
+                </p>
+                <p class="modal-description">
+                    Collaborated with team members to complete the project before the deadline, attended regular meetings, and helped 
+                    teammates catch up after completing my tasks.
+                </p>
+                <div class="modal-tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Android Studio</span>
+                    <span class="tag">API Development</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Teamwork</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- College Scheduler App Modal -->
+    <div class="modal-overlay" id="modal-scheduler">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-icon">📅</div>
+            <h2 class="modal-title">College Scheduler App</h2>
+            <p class="modal-date">January 2024 – February 2024 | Georgia Tech</p>
+            <div class="modal-body">
+                <p class="modal-description">
+                    Developed an app in Android Studio that allowed students to add, remove, and prioritize assignments, utilizing Java 
+                    and GitHub for version control. Delegated various tasks among team members and held weekly group meetings to provide 
+                    updates and assistance if needed.
+                </p>
+                <p class="modal-description">
+                    Implemented an SQL database to store user data, ensuring data persistence and seamless retrieval of assignments even 
+                    after the app was closed.
+                </p>
+                <div class="modal-tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Android Studio</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Software Development</span>
+                    <span class="tag">Teamwork</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Watching Sports Modal -->
+    <div class="modal-overlay" id="modal-sports">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-icon">⚽</div>
+            <h2 class="modal-title">Watching Sports</h2>
+            <p class="modal-date">November 2023</p>
+            <div class="modal-body">
+                <p class="modal-description">
+                    Developed a sports game ticketing system in Java that utilizes object-oriented principles, including polymorphism, 
+                    exceptions, and file I/O, to manage sports events and ticket purchases efficiently.
+                </p>
+                <p class="modal-description">
+                    Implemented an abstract SportsGame class with shared attributes: venue, date, score, and seats available, and enforced 
+                    validation constraints to ensure data integrity. Designed concrete subclasses (BasketballGame, FootballGame) to extend 
+                    SportsGame, implementing sport-specific attributes while leveraging constructor chaining. Created a robust file-handling 
+                    system to read and write sports game data to a CSV file, ensuring persistence.
+                </p>
+                <div class="modal-tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Object-Oriented Programming</span>
+                    <span class="tag">Software Development</span>
+                    <span class="tag">Algorithm Development</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
-    
+</html>
