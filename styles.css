@@ -1776,14 +1776,20 @@ body.light-mode .glitch-text-large {
     animation: none;
 }
 
+body.light-mode .highlight.glitch-text-large {
+    color: #d63384;
+    text-shadow: 0 2px 8px rgba(214, 51, 132, 0.3);
+}
+
 body.light-mode .glitch-text-large::before,
 body.light-mode .glitch-text-large::after {
     display: none;
 }
 
 body.light-mode .highlight {
-    color: #000000;
-    text-shadow: none;
+    color: #d63384;
+    text-shadow: 0 2px 8px rgba(214, 51, 132, 0.3);
+    font-weight: 700;
 }
 
 body.light-mode .typing-subtitle {
